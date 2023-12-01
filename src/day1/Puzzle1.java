@@ -1,4 +1,4 @@
-package Day1;
+package day1;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -19,7 +19,7 @@ public class Puzzle1 {
             int maxCharIndex = value.length() - 1;
 
             //get the firstDigit from the string
-            char firstDigitChar = '-';
+            char firstDigitChar = '0';
             for (int i = 0; i <= maxCharIndex; i++) {
                 if (isDigit(value.charAt(i))) {
                     firstDigitChar = value.charAt(i);
@@ -28,7 +28,7 @@ public class Puzzle1 {
             }
 
             //get the lastDigit from the string
-            char lastDigitChar = '-';
+            char lastDigitChar = '0';
             for (int i = maxCharIndex; i >= 0; i--) {
                 if (isDigit(value.charAt(i))) {
                     lastDigitChar = value.charAt(i);

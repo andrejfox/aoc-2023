@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b23edd6-b186-4bdb-9277-04734bfa3108" name="Changes" comment="First commit!">
-      <change afterPath="$PROJECT_DIR$/src/Day1/input.txt" afterDir="false" />
+    <list default="true" id="2b23edd6-b186-4bdb-9277-04734bfa3108" name="Changes" comment="Day 1 1/2">
+      <change afterPath="$PROJECT_DIR$/src/day1/Puzzle2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day1/Puzzle1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day1/Puzzle1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day1/Puzzle1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day1/Puzzle1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day1/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/day1/input.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,39 +23,67 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ANDREJ6693&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="425fe6ed-8274-4b02-a79c-90ef2032c924" />
+        <option name="url" value="https://github.com/ANDREJ6693/Advent_of_Code_2023.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2YwNM8f06YWJMf040UxEO9dnx2Z" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RunManager" selected="Application.Puzzle2">
     <configuration name="Puzzle1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Day1.Puzzle1" />
+      <option name="MAIN_CLASS_NAME" value="day1.Puzzle1" />
       <module name="Advent_of_Code_2023" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Day1.*" />
+          <option name="PATTERN" value="day1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Puzzle2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="day1.Puzzle2" />
+      <module name="Advent_of_Code_2023" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="day1.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -64,6 +93,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Puzzle2" />
         <item itemvalue="Application.Puzzle1" />
       </list>
     </recent_temporary>
@@ -85,7 +115,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701433173249</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Day 1 1/2">
+      <option name="closed" value="true" />
+      <created>1701443276157</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701443276157</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -113,6 +151,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit!" />
-    <option name="LAST_COMMIT_MESSAGE" value="First commit!" />
+    <MESSAGE value="Day 1 1/2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 1 1/2" />
   </component>
 </project>
