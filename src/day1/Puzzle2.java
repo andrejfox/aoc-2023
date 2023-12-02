@@ -201,7 +201,7 @@ public class Puzzle2 {
 
     private static List<String> readInputFile() {
         try {
-            return Files.readAllLines(Path.of("./src/Day1/input.txt"));
+            return Files.readAllLines(Path.of("./src/input.txt"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
