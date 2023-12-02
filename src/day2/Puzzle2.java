@@ -95,7 +95,6 @@ public class Puzzle2 {
             }
 
             int pow = minRed * minGreen * minBlue;
-            System.out.println(entry.getKey() + " | " + pow);
             sum += pow;
         }
         return sum;
