@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b23edd6-b186-4bdb-9277-04734bfa3108" name="Changes" comment="Day3 Done!">
-      <change afterPath="$PROJECT_DIR$/src/day4/Puzzle1.java" afterDir="false" />
+    <list default="true" id="2b23edd6-b186-4bdb-9277-04734bfa3108" name="Changes" comment="Day4 1/2">
+      <change afterPath="$PROJECT_DIR$/src/day4/Puzzle2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,11 +73,12 @@
       <recent name="C:\Users\andre\Dokumenti\Code\Java\Advent_of_Code_2023\src\day1" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="day4" />
       <recent name="day3" />
       <recent name="day2" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Puzzle1">
+  <component name="RunManager" selected="Application.Puzzle2">
     <configuration name="Puzzle1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="day4.Puzzle1" />
       <module name="Advent_of_Code_2023" />
@@ -91,12 +92,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="day2.Puzzle1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="day2.Puzzle1" />
+    <configuration name="Puzzle2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="day4.Puzzle2" />
       <module name="Advent_of_Code_2023" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="day2.*" />
+          <option name="PATTERN" value="day4.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -145,11 +146,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Puzzle2" />
         <item itemvalue="Application.Puzzle1" />
         <item itemvalue="Application.day3.Puzzle1" />
         <item itemvalue="Application.day3.Puzzle2" />
         <item itemvalue="Application.day2.Puzzle2" />
-        <item itemvalue="Application.day2.Puzzle1" />
       </list>
     </recent_temporary>
   </component>
@@ -226,7 +227,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701710203311</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Day4 1/2">
+      <option name="closed" value="true" />
+      <created>1701719417132</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701719417132</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -260,6 +269,7 @@
     <MESSAGE value="Removed debug code from Day2" />
     <MESSAGE value="Day3 1/2" />
     <MESSAGE value="Day3 Done!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day3 Done!" />
+    <MESSAGE value="Day4 1/2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day4 1/2" />
   </component>
 </project>
