@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b23edd6-b186-4bdb-9277-04734bfa3108" name="Changes" comment="Removed debug code from Day2">
-      <change afterPath="$PROJECT_DIR$/src/day3/Puzzle1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/Utils.java" afterDir="false" />
+    <list default="true" id="2b23edd6-b186-4bdb-9277-04734bfa3108" name="Changes" comment="Day3 1/2">
+      <change afterPath="$PROJECT_DIR$/src/day3/Puzzle2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day1/Puzzle1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day1/Puzzle1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day1/Puzzle2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day1/Puzzle2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day2/Puzzle1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day2/Puzzle1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day2/Puzzle2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day2/Puzzle2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day3/Puzzle1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day3/Puzzle1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +42,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 3
@@ -56,41 +55,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.sourceCode.Java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\andre\Dokumenti\Code\Java\Advent_of_Code_2023\src" />
       <recent name="C:\Users\andre\Dokumenti\Code\Java\Advent_of_Code_2023\src\day1" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="day3" />
       <recent name="day2" />
     </key>
   </component>
   <component name="RunManager" selected="Application.day3.Puzzle1">
-    <configuration name="Puzzle1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="day1.Puzzle1" />
-      <module name="Advent_of_Code_2023" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="day1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Puzzle2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="day1.Puzzle2" />
       <module name="Advent_of_Code_2023" />
@@ -143,13 +131,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="day3.Puzzle2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="day3.Puzzle2" />
+      <module name="Advent_of_Code_2023" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="day3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.day3.Puzzle1" />
+        <item itemvalue="Application.day3.Puzzle2" />
         <item itemvalue="Application.day2.Puzzle2" />
         <item itemvalue="Application.day2.Puzzle1" />
         <item itemvalue="Application.Puzzle2" />
-        <item itemvalue="Application.Puzzle1" />
       </list>
     </recent_temporary>
   </component>
@@ -210,7 +211,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701541730079</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Day3 1/2">
+      <option name="closed" value="true" />
+      <created>1701650419405</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701650419405</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -242,6 +251,7 @@
     <MESSAGE value="Day 2 1/2" />
     <MESSAGE value="Day 2 Complete!" />
     <MESSAGE value="Removed debug code from Day2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed debug code from Day2" />
+    <MESSAGE value="Day3 1/2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day3 1/2" />
   </component>
 </project>

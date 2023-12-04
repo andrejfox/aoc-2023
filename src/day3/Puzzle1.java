@@ -47,221 +47,77 @@ public class Puzzle1 {
         return NumbersNextToSymbolsList;
     }
 
+    public static int[] numExtender(List<String> inputList, int l, int c, int maxC) {
+        StringBuilder stringOfNum = new StringBuilder(String.valueOf(inputList.get(l).charAt(c)));
+
+        int charCounter = c - 1;
+        while (Character.isDigit(inputList.get(l).charAt(charCounter)) && charCounter > 0) {
+            stringOfNum.insert(0, inputList.get(l).charAt(charCounter));
+            charCounter--;
+        }
+        if (charCounter == 0 && Character.isDigit(inputList.get(l).charAt(charCounter))) {
+            stringOfNum.insert(0, inputList.get(l).charAt(charCounter));
+        }
+
+        charCounter = c + 1;
+        while (Character.isDigit(inputList.get(l).charAt(charCounter)) && charCounter < maxC) {
+            stringOfNum.append(inputList.get(l).charAt(charCounter));
+            charCounter++;
+        }
+        if (charCounter == maxC && Character.isDigit(inputList.get(l).charAt(charCounter))) {
+            stringOfNum.append(inputList.get(l).charAt(charCounter));
+        }
+
+        return new int[]{ Integer.parseInt(String.valueOf(stringOfNum)), charCounter };
+    }
+
     public static int[] nextToSymbol(List<String> inputList, int currentLine, int currentChar, int maxLine, int maxChar) {
         if (!(currentLine == 0 || currentChar == 0) &&
             inputList.get(currentLine - 1).charAt(currentChar - 1) != '.' &&
             !Character.isDigit(inputList.get(currentLine - 1).charAt(currentChar - 1))) {
-
-            StringBuilder stringOfNum = new StringBuilder(String.valueOf(inputList.get(currentLine).charAt(currentChar)));
-
-            int charCounter = currentChar - 1;
-            while (Character.isDigit(inputList.get(currentLine).charAt(charCounter)) && charCounter > 0) {
-                stringOfNum.insert(0, inputList.get(currentLine).charAt(charCounter));
-                charCounter--;
-            }
-            if (charCounter == 0 && Character.isDigit(inputList.get(currentLine).charAt(charCounter))) {
-                stringOfNum.insert(0, inputList.get(currentLine).charAt(charCounter));
-            }
-
-            charCounter = currentChar + 1;
-            while (Character.isDigit(inputList.get(currentLine).charAt(charCounter)) && charCounter < maxChar) {
-                stringOfNum.append(inputList.get(currentLine).charAt(charCounter));
-                charCounter++;
-            }
-            if (charCounter == maxChar && Character.isDigit(inputList.get(currentLine).charAt(charCounter))) {
-                stringOfNum.append(inputList.get(currentLine).charAt(charCounter));
-            }
-
-            return new int[]{ Integer.parseInt(String.valueOf(stringOfNum)), charCounter };
+            return numExtender(inputList, currentLine, currentChar, maxChar);
         }
 
         if (currentLine != 0 &&
             inputList.get(currentLine - 1).charAt(currentChar) != '.' &&
             !Character.isDigit(inputList.get(currentLine - 1).charAt(currentChar))) {
-
-            StringBuilder stringOfNum = new StringBuilder(String.valueOf(inputList.get(currentLine).charAt(currentChar)));
-
-            int charCounter = currentChar - 1;
-            while (Character.isDigit(inputList.get(currentLine).charAt(charCounter)) && charCounter > 0) {
-                stringOfNum.insert(0, inputList.get(currentLine).charAt(charCounter));
-                charCounter--;
-            }
-            if (charCounter == 0 && Character.isDigit(inputList.get(currentLine).charAt(charCounter))) {
-                stringOfNum.insert(0, inputList.get(currentLine).charAt(charCounter));
-            }
-
-            charCounter = currentChar + 1;
-            while (Character.isDigit(inputList.get(currentLine).charAt(charCounter)) && charCounter < maxChar) {
-                stringOfNum.append(inputList.get(currentLine).charAt(charCounter));
-                charCounter++;
-            }
-            if (charCounter == maxChar && Character.isDigit(inputList.get(currentLine).charAt(charCounter))) {
-                stringOfNum.append(inputList.get(currentLine).charAt(charCounter));
-            }
-
-            return new int[]{ Integer.parseInt(String.valueOf(stringOfNum)), charCounter };
+            return numExtender(inputList, currentLine, currentChar, maxChar);
         }
 
         if (!(currentLine == 0 || currentChar == maxChar) &&
             inputList.get(currentLine - 1).charAt(currentChar + 1) != '.' &&
             !Character.isDigit(inputList.get(currentLine - 1).charAt(currentChar + 1))) {
-
-            StringBuilder stringOfNum = new StringBuilder(String.valueOf(inputList.get(currentLine).charAt(currentChar)));
-
-            int charCounter = currentChar - 1;
-            while (Character.isDigit(inputList.get(currentLine).charAt(charCounter)) && charCounter > 0) {
-                stringOfNum.insert(0, inputList.get(currentLine).charAt(charCounter));
-                charCounter--;
-            }
-            if (charCounter == 0 && Character.isDigit(inputList.get(currentLine).charAt(charCounter))) {
-                stringOfNum.insert(0, inputList.get(currentLine).charAt(charCounter));
-            }
-
-            charCounter = currentChar + 1;
-            while (Character.isDigit(inputList.get(currentLine).charAt(charCounter)) && charCounter < maxChar) {
-                stringOfNum.append(inputList.get(currentLine).charAt(charCounter));
-                charCounter++;
-            }
-            if (charCounter == maxChar && Character.isDigit(inputList.get(currentLine).charAt(charCounter))) {
-                stringOfNum.append(inputList.get(currentLine).charAt(charCounter));
-            }
-
-            return new int[]{ Integer.parseInt(String.valueOf(stringOfNum)), charCounter };
+            return numExtender(inputList, currentLine, currentChar, maxChar);
         }
 
         if (currentChar != 0 &&
             inputList.get(currentLine).charAt(currentChar - 1) != '.' &&
             !Character.isDigit(inputList.get(currentLine).charAt(currentChar - 1))) {
-
-            StringBuilder stringOfNum = new StringBuilder(String.valueOf(inputList.get(currentLine).charAt(currentChar)));
-
-            int charCounter = currentChar - 1;
-            while (Character.isDigit(inputList.get(currentLine).charAt(charCounter)) && charCounter > 0) {
-                stringOfNum.insert(0, inputList.get(currentLine).charAt(charCounter));
-                charCounter--;
-            }
-            if (charCounter == 0 && Character.isDigit(inputList.get(currentLine).charAt(charCounter))) {
-                stringOfNum.insert(0, inputList.get(currentLine).charAt(charCounter));
-            }
-
-            charCounter = currentChar + 1;
-            while (Character.isDigit(inputList.get(currentLine).charAt(charCounter)) && charCounter < maxChar) {
-                stringOfNum.append(inputList.get(currentLine).charAt(charCounter));
-                charCounter++;
-            }
-            if (charCounter == maxChar && Character.isDigit(inputList.get(currentLine).charAt(charCounter))) {
-                stringOfNum.append(inputList.get(currentLine).charAt(charCounter));
-            }
-
-            return new int[]{ Integer.parseInt(String.valueOf(stringOfNum)), charCounter };
+            return numExtender(inputList, currentLine, currentChar, maxChar);
         }
 
         if (currentChar != maxChar &&
             inputList.get(currentLine).charAt(currentChar + 1) != '.' &&
             !Character.isDigit(inputList.get(currentLine).charAt(currentChar + 1))) {
-
-            StringBuilder stringOfNum = new StringBuilder(String.valueOf(inputList.get(currentLine).charAt(currentChar)));
-
-            int charCounter = currentChar - 1;
-            while (Character.isDigit(inputList.get(currentLine).charAt(charCounter)) && charCounter > 0) {
-                stringOfNum.insert(0, inputList.get(currentLine).charAt(charCounter));
-                charCounter--;
-            }
-            if (charCounter == 0 && Character.isDigit(inputList.get(currentLine).charAt(charCounter))) {
-                stringOfNum.insert(0, inputList.get(currentLine).charAt(charCounter));
-            }
-
-            charCounter = currentChar + 1;
-            while (Character.isDigit(inputList.get(currentLine).charAt(charCounter)) && charCounter < maxChar) {
-                stringOfNum.append(inputList.get(currentLine).charAt(charCounter));
-                charCounter++;
-            }
-            if (charCounter == maxChar && Character.isDigit(inputList.get(currentLine).charAt(charCounter))) {
-                stringOfNum.append(inputList.get(currentLine).charAt(charCounter));
-            }
-
-            return new int[]{ Integer.parseInt(String.valueOf(stringOfNum)), charCounter };
+            return numExtender(inputList, currentLine, currentChar, maxChar);
         }
 
         if (!(currentLine == maxLine || currentChar == 0) &&
             inputList.get(currentLine + 1).charAt(currentChar - 1) != '.' &&
             !Character.isDigit(inputList.get(currentLine + 1).charAt(currentChar - 1))) {
-
-            StringBuilder stringOfNum = new StringBuilder(String.valueOf(inputList.get(currentLine).charAt(currentChar)));
-
-            int charCounter = currentChar - 1;
-            while (Character.isDigit(inputList.get(currentLine).charAt(charCounter)) && charCounter > 0) {
-                stringOfNum.insert(0, inputList.get(currentLine).charAt(charCounter));
-                charCounter--;
-            }
-            if (charCounter == 0 && Character.isDigit(inputList.get(currentLine).charAt(charCounter))) {
-                stringOfNum.insert(0, inputList.get(currentLine).charAt(charCounter));
-            }
-
-            charCounter = currentChar + 1;
-            while (Character.isDigit(inputList.get(currentLine).charAt(charCounter)) && charCounter < maxChar) {
-                stringOfNum.append(inputList.get(currentLine).charAt(charCounter));
-                charCounter++;
-            }
-            if (charCounter == maxChar && Character.isDigit(inputList.get(currentLine).charAt(charCounter))) {
-                stringOfNum.append(inputList.get(currentLine).charAt(charCounter));
-            }
-
-            return new int[]{ Integer.parseInt(String.valueOf(stringOfNum)), charCounter };
+            return numExtender(inputList, currentLine, currentChar, maxChar);
         }
 
         if (currentLine != maxLine &&
             inputList.get(currentLine + 1).charAt(currentChar) != '.' &&
             !Character.isDigit(inputList.get(currentLine + 1).charAt(currentChar))) {
-
-            StringBuilder stringOfNum = new StringBuilder(String.valueOf(inputList.get(currentLine).charAt(currentChar)));
-
-            int charCounter = currentChar - 1;
-            while (Character.isDigit(inputList.get(currentLine).charAt(charCounter)) && charCounter > 0) {
-                stringOfNum.insert(0, inputList.get(currentLine).charAt(charCounter));
-                charCounter--;
-            }
-            if (charCounter == 0 && Character.isDigit(inputList.get(currentLine).charAt(charCounter))) {
-                stringOfNum.insert(0, inputList.get(currentLine).charAt(charCounter));
-            }
-
-            charCounter = currentChar + 1;
-            while (Character.isDigit(inputList.get(currentLine).charAt(charCounter)) && charCounter < maxChar) {
-                stringOfNum.append(inputList.get(currentLine).charAt(charCounter));
-                charCounter++;
-            }
-            if (charCounter == maxChar && Character.isDigit(inputList.get(currentLine).charAt(charCounter))) {
-                stringOfNum.append(inputList.get(currentLine).charAt(charCounter));
-            }
-
-            return new int[]{ Integer.parseInt(String.valueOf(stringOfNum)), charCounter };
+            return numExtender(inputList, currentLine, currentChar, maxChar);
         }
 
         if (!(currentLine == maxLine || currentChar == maxChar) &&
             inputList.get(currentLine + 1).charAt(currentChar + 1) != '.' &&
             !Character.isDigit(inputList.get(currentLine + 1).charAt(currentChar + 1))) {
-
-            StringBuilder stringOfNum = new StringBuilder(String.valueOf(inputList.get(currentLine).charAt(currentChar)));
-
-            int charCounter = currentChar - 1;
-            while (Character.isDigit(inputList.get(currentLine).charAt(charCounter)) && charCounter > 0) {
-                stringOfNum.insert(0, inputList.get(currentLine).charAt(charCounter));
-                charCounter--;
-            }
-            if (charCounter == 0 && Character.isDigit(inputList.get(currentLine).charAt(charCounter))) {
-                stringOfNum.insert(0, inputList.get(currentLine).charAt(charCounter));
-            }
-
-            charCounter = currentChar + 1;
-            while (Character.isDigit(inputList.get(currentLine).charAt(charCounter)) && charCounter < maxChar) {
-                stringOfNum.append(inputList.get(currentLine).charAt(charCounter));
-                charCounter++;
-            }
-            if (charCounter == maxChar && Character.isDigit(inputList.get(currentLine).charAt(charCounter))) {
-                stringOfNum.append(inputList.get(currentLine).charAt(charCounter));
-            }
-
-            return new int[]{ Integer.parseInt(String.valueOf(stringOfNum)), charCounter };
+            return numExtender(inputList, currentLine, currentChar, maxChar);
         }
         return new int[]{ 0, currentChar };
     }
