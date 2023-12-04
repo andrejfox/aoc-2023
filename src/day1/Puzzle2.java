@@ -1,12 +1,11 @@
 package day1;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
 import static java.lang.Character.isDigit;
+
+import static utils.Utils.readInputFile;
 
 public class Puzzle2 {
     public static void main(String[] args) {
@@ -197,13 +196,5 @@ public class Puzzle2 {
         }
 
         System.out.println(sum);
-    }
-
-    private static List<String> readInputFile() {
-        try {
-            return Files.readAllLines(Path.of("./src/input.txt"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
     }
 }
