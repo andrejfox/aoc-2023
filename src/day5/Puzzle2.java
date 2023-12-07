@@ -1,71 +1,132 @@
 package day5;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.List;
 
 import static utils.Utils.readInputFile;
 
 public class Puzzle2 {
     private record Mapping(long destinationRangeStart, long sourceRangeStart, long rangeLength) {}
+
     public static void main(String[] args) {
         List<String> list = readInputFile();
-        List<Long> seeds = seedsParser(list);
+        List<Long[]> seedFields = seedsParser(list);
         List<List<Mapping>> mappings = mappingParser(list);
+        long lowestLocationNumber = bigBadAlgorithm(seedFields, mappings);
 
-        System.out.println(seeds);
+        System.out.println(lowestLocationNumber);
+    }
 
-        List<Long> locations = new ArrayList<>();
-        for (long seed : seeds) {
-            locations.add(getLocation(seed, mappings));
+    private static long bigBadAlgorithm(List<Long[]> seedFields, List<List<Mapping>> mappings) {
+        List<Long[]> land = new ArrayList<>();
+        for (Long[] currSeedField : seedFields) {
+            System.out.println("soil");
+            List<Long[]> soil = applyMappingToSeedFields(currSeedField, mappings.get(MappingName.SEED_TO_SOIL_MAP.index));
+            for (Long[] cSoil : soil) {
+                System.out.println("fertilizer");
+                List<Long[]> fertilizer = applyMappingToSeedFields(cSoil, mappings.get(MappingName.SOIL_TO_FERTILIZER_MAP.index));
+                for (Long[] cFertilizer : fertilizer) {
+                    System.out.println("watter");
+                    List<Long[]> watter = applyMappingToSeedFields(cFertilizer, mappings.get(MappingName.FERTILIZER_TO_WATER_MAP.index));
+                    for (Long[] cWatter : watter) {
+                        System.out.println("light");
+                        List<Long[]> light = applyMappingToSeedFields(cWatter, mappings.get(MappingName.WATER_TO_LIGHT_MAP.index));
+                        for (Long[] cLight : light) {
+                            System.out.println("temperature-----------------");
+                            List<Long[]> temperature = applyMappingToSeedFields(cLight, mappings.get(MappingName.LIGHT_TO_TEMPERATURE_MAP.index));
+                            for (Long[] cTemperature : temperature) {
+                                System.out.println("humidity");
+                                List<Long[]> humidity = applyMappingToSeedFields(cTemperature, mappings.get(MappingName.TEMPERATURE_TO_HUMIDITY_MAP.index));
+                                for (Long[] cHumidity : humidity) {
+                                    System.out.println("land");
+                                    land.addAll(applyMappingToSeedFields(cHumidity, mappings.get(MappingName.HUMIDITY_TO_LOCATION_MAP.index)));
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
 
-        Collections.sort(locations);
-        System.out.println(locations.get(0));
+        long smallestLand = 1000000000;
+        for (Long[] cLand : land) {
+            if (cLand[0] < smallestLand && cLand[0] > 0) smallestLand = cLand[0];
+        }
+
+        return smallestLand;
     }
 
-    private static long getLocation(long seed, List<List<Mapping>> mappings) {
-        long soil = getNextMappingValue(seed, mappings.get(MappingName.SEED_TO_SOIL_MAP.index));
-        long fertilizer = getNextMappingValue(soil, mappings.get(MappingName.SOIL_TO_FERTILIZER_MAP.index));
-        long watter = getNextMappingValue(fertilizer, mappings.get(MappingName.FERTILIZER_TO_WATER_MAP.index));
-        long light = getNextMappingValue(watter, mappings.get(MappingName.WATER_TO_LIGHT_MAP.index));
-        long temperature = getNextMappingValue(light, mappings.get(MappingName.LIGHT_TO_TEMPERATURE_MAP.index));
-        long humidity = getNextMappingValue(temperature, mappings.get(MappingName.TEMPERATURE_TO_HUMIDITY_MAP.index));
-        return getNextMappingValue(humidity, mappings.get(MappingName.HUMIDITY_TO_LOCATION_MAP.index));
-    }
+    private static List<Long[]> applyMappingToSeedFields(Long[] inputSeedField, List<Mapping> mappingList) {
+        List<Long[]> out = new ArrayList<>();
+        out.add(inputSeedField);
+        for (Mapping currentMapping : mappingList) {
+            long currInStart = currentMapping.sourceRangeStart;
+            long currInEnd = currInStart + currentMapping.rangeLength;
 
-    private static long getNextMappingValue(long seed, List<Mapping> mappings) {
-        long out = seed;
-        for (Mapping currentMapping : mappings) {
-            if (seed >= currentMapping.sourceRangeStart && seed < currentMapping.sourceRangeStart + currentMapping.rangeLength) {
-                out += currentMapping.destinationRangeStart - currentMapping.sourceRangeStart;
-                break;
+            long modifier = currentMapping.destinationRangeStart - currInStart;
+
+            List<Long[]> toRemove = new ArrayList<>();
+            List<Long[]> toAdd = new ArrayList<>();
+            for (Long[] seedRange : out) {
+                out.forEach(x -> System.out.print(Arrays.toString(x)));
+                System.out.println();
+                long seedStart = seedRange[0];
+                long seedEnd = seedStart + seedRange[1];
+
+                //[......]
+                if (seedStart > currInEnd || seedEnd < currInStart) {
+                    System.out.println("[......]");
+                    continue;
+                }
+
+                //[###...]
+                if (seedStart > currInStart && seedStart < currInEnd && seedEnd > currInEnd) {
+                    System.out.println("[###...]");
+                    toRemove.add(seedRange);
+                    toAdd.add(new Long[] {seedStart + modifier, currInEnd - seedStart});
+                    toAdd.add(new Long[] {currInEnd, seedEnd - currInEnd});
+                    continue;
+                }
+
+                //[...###]
+                if (currInStart > seedStart && currInStart < seedEnd && currInEnd > seedEnd) {
+                    System.out.println("[...###]");
+                    toRemove.add(seedRange);
+                    toAdd.add(new Long[] {seedStart, currInStart - seedStart});
+                    toAdd.add(new Long[] {currInStart + modifier, seedEnd - currInStart});
+                    continue;
+                }
+
+                //[..##..]
+                if (currInStart < seedStart && currInEnd < seedEnd) {
+                    System.out.println("[..##..]");
+                    toRemove.add(seedRange);
+                    toAdd.add(new Long[]{seedStart, currInStart - seedStart});
+                    toAdd.add(new Long[]{currInStart + modifier, currInEnd - currInStart});
+                    toAdd.add(new Long[]{currInEnd, seedEnd - currInEnd});
+                }
+
+                //[######]
+                System.out.println("[######]");
+                System.out.println(modifier);
+                toRemove.add(seedRange);
+                toAdd.add(new Long[]{seedStart + modifier, seedRange[1]});
             }
+            out.removeAll(toRemove);
+            out.addAll(toAdd);
         }
         return out;
     }
 
-    private static List<Long> seedsParser(List<String> inputList) {
-        String inputLine = inputList.get(0);
+    private static List<Long[]> seedsParser(List<String> inputList) {
+        String inputLine = inputList.getFirst();
         String[] seeds = inputLine.split(": ")[1].split(" ");
-        List<Long> out1 = new ArrayList<>();
-        List<Long> out2 = new ArrayList<>();
-        for (long i = 0; i < seeds.length; i++) {
-            if (i % 2 == 0) {
-                out1.add(Long.parseLong(seeds[(int) i]));
-            } else {
-                out2.add(Long.parseLong(seeds[(int) i]));
-            }
+        List<Long[]> seedFields = new ArrayList<>();
+        for (int i = 0; i < seeds.length; i += 2) {
+            seedFields.add(new Long[]{Long.valueOf((seeds[i])), Long.valueOf(seeds[i + 1])});
         }
-
-        List<Long> out = new ArrayList<>();
-        for (long i = 0; i < out1.size(); i++) {
-            for (long x = Math.min(out1.get((int) i), out2.get((int) i)); x < Math.max(out1.get((int) i), out2.get((int) i)); x++) {
-                out.add(x);
-            }
-        }
-
-        return out;
+        return seedFields;
     }
 
     private static List<List<Mapping>> mappingParser(List<String> inputList) {
